@@ -1,2 +1,2 @@
-# eeudyptula
+# eudyptula
 eudyptula challenge

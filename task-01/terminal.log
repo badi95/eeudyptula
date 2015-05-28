@@ -1,0 +1,20 @@
+bmorris@badi2-HP-EliteBook-8570w ~/w/b/e/task-01> ls
+dmesg.log  modules.order   task-01.c   task-01.mod.c  task-01.o
+Makefile   Module.symvers  task-01.ko  task-01.mod.o  task-01.txt
+bmorris@badi2-HP-EliteBook-8570w ~/w/b/e/task-01> sudo insmod ./task-01.ko
+bmorris@badi2-HP-EliteBook-8570w ~/w/b/e/task-01> lsmod | grep task
+task_01                12460  0
+bmorris@badi2-HP-EliteBook-8570w ~/w/b/e/task-01> dmesg | tail
+[20544.050819] usb 3-1.2.2: new low-speed USB device number 36 using xhci_hcd
+[20544.071052] usb 3-1.2.2: New USB device found, idVendor=0458, idProduct=0137
+[20544.071059] usb 3-1.2.2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[20544.071063] usb 3-1.2.2: Product: USB Optical Mouse
+[20544.071066] usb 3-1.2.2: Manufacturer: PixArt
+[20544.071289] usb 3-1.2.2: ep 0x81 - rounding interval to 64 microframes, ep desc says 80 microframes
+[20544.073445] input: PixArt USB Optical Mouse as /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1.2/3-1.2.2/3-1.2.2:1.0/input/input59
+[20544.073787] hid-generic 0003:0458:0137.0021: input,hidraw0: USB HID v1.11 Mouse [PixArt USB Optical Mouse] on usb-0000:00:14.0-1.2.2/input0
+[21585.094058] Hello world
+bmorris@badi2-HP-EliteBook-8570w ~/w/b/e/task-01> sudo rmmod ./task-01.ko
+bmorris@badi2-HP-EliteBook-8570w ~/w/b/e/task-01> lsmod | grep task
+bmorris@badi2-HP-EliteBook-8570w ~/w/b/e/task-01>
+
